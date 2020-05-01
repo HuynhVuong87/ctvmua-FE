@@ -1,0 +1,21 @@
+<div class="center-screen">
+    <!-- <mat-list-item role="listitem">
+            <input type="email" placeholder="EMAIL" class="ip-form" [(ngModel)]='email' (keydown.enter)='loginNormal()'
+                autofocus>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <input type="password" placeholder="Mật Khẩu" class="ip-form" [(ngModel)]='pass'
+                (keydown.enter)='loginNormal()'>
+        </mat-list-item> -->
+    <h4>
+        Nếu tài khoản bạn định đăng nhập là tài khoản mới, vui lòng chọn:
+    </h4>
+    <mat-form-field style="width: 100%;">
+        <mat-label>Mục đích sử dụng</mat-label>
+        <mat-select [(value)]="selected">
+            <mat-option value="kigui">Kí Gửi</mat-option>
+            <mat-option value="muaho">Mua Hộ</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button style="width: 100%; margin-bottom: 20px" mat-raised-button color="primary" (click)="googleSignIn()">ĐĂNG NHẬP</button>
+</div>

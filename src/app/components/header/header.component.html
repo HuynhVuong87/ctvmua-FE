@@ -1,0 +1,15 @@
+<mat-toolbar *ngIf="role.uid">
+    <mat-toolbar-row>
+        <div class="menu">
+            <ng-container *ngFor="let item of menu">
+                <a mat-button routerLink="/{{item.route}}" routerLinkActive="is-active"
+                    [queryParams]="item.param? item.param : ''">{{item.title}}</a>
+            </ng-container>
+
+        </div>
+        <span class="menu-spacer"></span>
+        <img *ngIf="role.role !== 'admin'" src="{{role.photo}}" alt="" srcset="">
+        <a>{{role.name}} <span style="font-size: 16px;">({{role.role | ref: 'Role'}})</span></a>
+        <mat-icon title="ĐĂNG XUẤT" style="cursor: pointer; margin-left: 10px" (click)="fbSV.logOut()">input</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
